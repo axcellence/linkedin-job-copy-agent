@@ -2,7 +2,7 @@
 
 LinkedIn Job Copy Agent is a lightweight Chrome extension that adds a `Copy job` menu to LinkedIn job listing pages. It extracts the job title, company, location, salary, work mode, employment type, posting metadata, source URL, and job description, then formats that information for clipboard use or opens it directly in AI tools.
 
-The extension is designed for job seekers who want a clean, repeatable way to bring LinkedIn job specs into ChatGPT, Codex, Claude, or Claude Code without manually selecting and cleaning page text.
+The extension is designed for job seekers who want a clean, repeatable way to bring LinkedIn job specs into ChatGPT, Codex, Claude, Claude Desktop, or Claude Code without manually selecting and cleaning page text.
 
 ## Preview
 
@@ -28,6 +28,7 @@ The extension is designed for job seekers who want a clean, repeatable way to br
 | `Open in ChatGPT` | Opens `https://chat.openai.com/?q=...`. |
 | `Open in Codex` | Opens `codex://new?prompt=...`. |
 | `Open in Claude Code` | Opens `claude-cli://open?q=...`. |
+| `Open in Claude Desktop` | Opens `claude://claude.ai/new?q=...`. |
 | `Open in Claude` | Opens `https://claude.ai/new?q=...`. |
 
 Vendor actions use this prompt prefix:

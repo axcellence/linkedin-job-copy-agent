@@ -19,6 +19,9 @@
     "Claude Code": {
       urlPrefix: "claude-cli://open?q="
     },
+    "Claude Desktop": {
+      urlPrefix: "claude://claude.ai/new?q="
+    },
     "Claude Web": {
       urlPrefix: "https://claude.ai/new?q="
     }
@@ -68,6 +71,15 @@
       vendor: "Claude Code",
       formatter: buildOpenPrompt,
       toast: "Opening Claude Code with the job spec"
+    },
+    {
+      id: "claude-desktop",
+      label: "Open in Claude Desktop",
+      icon: claudeIcon(),
+      kind: "vendor",
+      vendor: "Claude Desktop",
+      formatter: buildOpenPrompt,
+      toast: "Opening Claude Desktop with the job spec"
     },
     {
       id: "claude-web",
