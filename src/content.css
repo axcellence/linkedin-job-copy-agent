@@ -1,0 +1,251 @@
+:root {
+  --lja-linkedin-blue: #0a66c2;
+  --lja-linkedin-blue-hover: #004182;
+  --lja-text: #191919;
+  --lja-muted: #666666;
+  --lja-border: rgba(0, 0, 0, 0.18);
+  --lja-surface: #ffffff;
+  --lja-surface-raised: #ffffff;
+  --lja-menu-shadow: 0 14px 34px rgba(0, 0, 0, 0.2);
+}
+
+#linkedin-job-copy-agent-root,
+#linkedin-job-copy-agent-root *,
+.lja-menu,
+.lja-menu * {
+  box-sizing: border-box;
+}
+
+#linkedin-job-copy-agent-root {
+  display: inline-flex;
+  position: relative;
+  z-index: 30;
+  margin: 8px 0 0 8px;
+  vertical-align: middle;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--lja-text);
+}
+
+#linkedin-job-copy-agent-root.lja-inline-row {
+  margin-top: 0;
+}
+
+.lja-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--lja-linkedin-blue);
+  border-radius: 999px;
+  background: var(--lja-surface);
+  color: var(--lja-linkedin-blue);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+}
+
+.lja-trigger:hover,
+.lja-trigger:focus-visible {
+  background: rgba(10, 102, 194, 0.1);
+  border-color: var(--lja-linkedin-blue-hover);
+  box-shadow: inset 0 0 0 1px var(--lja-linkedin-blue-hover);
+  outline: none;
+}
+
+.lja-trigger[aria-expanded="true"] {
+  background: rgba(10, 102, 194, 0.12);
+}
+
+.lja-trigger-icon,
+.lja-trigger-chevron,
+.lja-menu-icon {
+  display: inline-flex;
+  flex: 0 0 auto;
+  color: currentColor;
+}
+
+.lja-trigger-chevron {
+  transition: transform 150ms ease;
+}
+
+.lja-trigger[aria-expanded="true"] .lja-trigger-chevron {
+  transform: rotate(180deg);
+}
+
+.lja-agent-mark {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: #e8f3ff;
+  color: #0a4f95;
+  font-size: 11px;
+  font-weight: 750;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.lja-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2147483646;
+  width: min(286px, calc(100vw - 24px));
+  max-height: calc(100vh - 24px);
+  overflow-y: auto;
+  padding: 8px;
+  border: 1px solid var(--lja-border);
+  border-radius: 8px;
+  background: var(--lja-surface-raised);
+  box-shadow: var(--lja-menu-shadow);
+  color: var(--lja-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  transform-origin: 18px top;
+}
+
+.lja-menu[hidden] {
+  display: none;
+}
+
+.lja-menu::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: calc(var(--lja-arrow-left, 24px) - 6px);
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid var(--lja-border);
+  border-left: 1px solid var(--lja-border);
+  background: var(--lja-surface-raised);
+  transform: rotate(45deg);
+}
+
+.lja-menu[data-placement="top"]::before {
+  top: auto;
+  bottom: -7px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 1px solid var(--lja-border);
+  border-bottom: 1px solid var(--lja-border);
+}
+
+.lja-menu-title {
+  padding: 7px 10px 8px;
+  color: var(--lja-muted);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.lja-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 10px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--lja-text);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  cursor: pointer;
+}
+
+.lja-menu-item:hover,
+.lja-menu-item:focus-visible {
+  background: rgba(10, 102, 194, 0.1);
+  color: #0a4f95;
+  outline: none;
+}
+
+.lja-menu-divider {
+  height: 1px;
+  margin: 6px 8px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.lja-toast {
+  position: fixed;
+  top: 76px;
+  right: 24px;
+  z-index: 2147483647;
+  display: flex;
+  align-items: center;
+  max-width: min(360px, calc(100vw - 32px));
+  min-height: 44px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: #1f2328;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.lja-toast[data-tone="error"] {
+  background: #8a1f11;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .lja-menu {
+    animation: lja-menu-enter 120ms ease-out;
+  }
+
+  .lja-toast {
+    animation: lja-toast-enter 160ms ease-out;
+  }
+}
+
+@keyframes lja-menu-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes lja-toast-enter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  #linkedin-job-copy-agent-root {
+    display: flex;
+    width: 100%;
+    margin: 10px 0 0;
+  }
+
+  .lja-trigger {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .lja-menu {
+    width: min(320px, calc(100vw - 32px));
+  }
+}
